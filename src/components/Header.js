@@ -28,7 +28,7 @@ const Header = () => {
                 </div>
 
                 <div className="header-username">
-                    <p>UserName</p>
+                    <p>Saleh</p>
                     <div className="logout-container">
                         <button id="logout-button" onClick={logout}>Logout</button>
                     </div>
