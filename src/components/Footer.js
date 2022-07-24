@@ -8,17 +8,27 @@ const Footer = () => {
 
         <footer>
             <div className="footer-container">
-                <div className="contact-container">
-                    <h3 id="contact-h3">Contact</h3>
-                    <ul className="contact-list">
-                        <li className="contact-items">
-                            <span className="material-symbols-outlined">call</span> +966530255255
-                        </li>
-                        <li className="contact-items">
-                            <span className="material-symbols-outlined">mail</span> saldobayi.t@solutions.com.sa
-                        </li>
-                    </ul>
+
+                <div className="main-footer">
+                    <div className="contact-container">
+                        <h3 id="contact-h3">Contact</h3>
+                        <ul className="contact-list">
+                            <li className="contact-items">
+                                <span className="material-symbols-outlined">call</span> +966530255255
+                            </li>
+                            <li className="contact-items">
+                                <span className="material-symbols-outlined">mail</span> saldobayi.t@solutions.com.sa
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="social-media-icons">
+                        <i className="fa fa-twitter" ></i>
+                        <i className="fa fa-instagram"></i>
+                        <i className="fa fa-linkedin" aria-hidden="true"></i>
+                    </div>
                 </div>
+
 
                 <div className="footer-line"></div>
 

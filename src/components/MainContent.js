@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import { useParams } from "react-router-dom";
+import LikeButton from "./LikeButton";
 
 
 const MainContent = props => {
@@ -6,7 +8,7 @@ const MainContent = props => {
     const results = props.data;
 
     const [en, setEn] = useState('');
-    const [author, setAuthor] = useState('saleh')
+    const author = useParams().user;
 
     // const [data, setData] = useState({
     //     author: "saleh",
@@ -14,19 +16,23 @@ const MainContent = props => {
     // });
 
             
-    const handleSubmit = () => {
-        
-        const data = {en, author};
+    const handleSubmit = (e) => {
 
+        e.preventDefault();
+        const data = {en, author};
         fetch('https://programming-quotes-api.herokuapp.com/Quotes', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
         })
         .then(console.log(data))
+        .then(setEn(''))
+        // .then(window.location.reload())  
         .catch((error) => {
             console.log(error)
         })
+
+
     }
 
     
@@ -38,8 +44,14 @@ const MainContent = props => {
                 {results.length > 0 && (
                     <ul className="quotes-list">
                         {results.map(result => (
-                            <li className="qoutes-items">{result.en} <p className="author"> - {result.author} </p> </li>
+                            <li className="qoutes-items">{result.en}
+                                <div className="authorAndLikeButton-container">
+                                    <p className="author"> - {result.author} </p> 
+                                    <LikeButton />
+                                </div> 
+                            </li>
                         ))}
+                        
                     </ul>
                 )}
             </div>

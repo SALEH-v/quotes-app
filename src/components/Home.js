@@ -3,16 +3,17 @@ import Header from "./Header";
 import MainContent from "./MainContent";
 import Footer from "./Footer";
 
-
 export default class Home extends Component{
 
     constructor() {
       super();
       this.state = {
         quotes: [],
-        loading: true
+        loading: true,
       };
     }
+
+    
   
     componentDidMount() {
       fetch('https://programming-quotes-api.herokuapp.com/Quotes')
@@ -29,11 +30,11 @@ export default class Home extends Component{
   
     render() {
       return (
-        <div className="home-conatiner">
-            <Header />
-            <MainContent data={this.state.quotes.slice(Math.max(this.state.quotes.length - 10, 0))}/>
-            <Footer />
-        </div>
+      <div className="home-conatiner">
+          <Header />
+          <MainContent data={this.state.quotes.slice(Math.max(this.state.quotes.length - 10, 0))}/>
+          <Footer />
+      </div>
       )
   
     }

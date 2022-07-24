@@ -1,10 +1,11 @@
 import React from "react";
 import logo from '../images/jerry-ubah-logo2.png'
-import { useNavigate } from "react-router-dom";
-
-
+import { useNavigate, useParams } from "react-router-dom";
 
 const Header = () => {
+
+
+    const username = useParams().user;
 
     const navigate = useNavigate();
 
@@ -28,7 +29,7 @@ const Header = () => {
                 </div>
 
                 <div className="header-username">
-                    <p>username</p>
+                    <p>{username}</p>
                     <div className="logout-container">
                         <button id="logout-button" onClick={logout}>Logout</button>
                     </div>
